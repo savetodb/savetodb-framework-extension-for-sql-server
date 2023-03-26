@@ -1,15 +1,15 @@
 -- =============================================
 -- SaveToDB Framework Extension for SQL Server
--- Version 10.6, December 13, 2022
+-- Version 10.8, January 9, 2023
 --
 -- This script updates SaveToDB Framework Extension 10 to the latest version
 --
--- Copyright 2022 Gartle LLC
+-- Copyright 2022-2023 Gartle LLC
 --
 -- License: MIT
 -- =============================================
 
-IF 1004 <= COALESCE((SELECT CAST(LEFT(HANDLER_CODE, CHARINDEX('.', HANDLER_CODE) - 1) AS int) * 100 + CAST(RIGHT(HANDLER_CODE, LEN(HANDLER_CODE) - CHARINDEX('.', HANDLER_CODE)) AS float) FROM xls.handlers WHERE TABLE_SCHEMA = 'xls' AND TABLE_NAME = 'savetodb_framework_extension' AND COLUMN_NAME = 'version' AND EVENT_NAME = 'Information'), 0)
+IF 1008 <= COALESCE((SELECT CAST(LEFT(HANDLER_CODE, CHARINDEX('.', HANDLER_CODE) - 1) AS int) * 100 + CAST(RIGHT(HANDLER_CODE, LEN(HANDLER_CODE) - CHARINDEX('.', HANDLER_CODE)) AS float) FROM xls.handlers WHERE TABLE_SCHEMA = 'xls' AND TABLE_NAME = 'savetodb_framework_extension' AND COLUMN_NAME = 'version' AND EVENT_NAME = 'Information'), 0)
     RAISERROR('SaveToDB Framework is up-to-date. Update skipped', 11, 0)
 GO
 
@@ -38,7 +38,7 @@ FROM
         , CAST(NULL AS int) AS MENU_ORDER
         , CAST(NULL AS bit) AS EDIT_PARAMETERS
 
-    UNION ALL SELECT N'xls', N'savetodb_framework_extension', N'version', N'Information', NULL, NULL, N'ATTRIBUTE', N'10.4', NULL, NULL, NULL
+    UNION ALL SELECT N'xls', N'savetodb_framework_extension', N'version', N'Information', NULL, NULL, N'ATTRIBUTE', N'10.8', NULL, NULL, NULL
     UNION ALL SELECT N'xls', N'users', NULL, N'Actions', N'xls', N'xl_actions_set_extended_role_permissions', N'PROCEDURE', NULL, N'_MsgBox', 22, 1
     UNION ALL SELECT N'xls', N'users', NULL, N'Actions', N'xls', N'xl_actions_revoke_extended_role_permissions', N'PROCEDURE', NULL, N'_MsgBox', 23, 1
     UNION ALL SELECT N'xls', N'view_columns', NULL, N'Actions', N'xls', N'Developer Guide', N'HTTP', N'https://www.savetodb.com/dev-guide/xls-columns.htm', NULL, 13, NULL
@@ -82,7 +82,7 @@ FROM
         , CAST(NULL AS int) AS MENU_ORDER
         , CAST(NULL AS bit) AS EDIT_PARAMETERS
 
-    UNION ALL SELECT N'xls', N'savetodb_framework_extension', N'version', N'Information', NULL, NULL, N'ATTRIBUTE', N'10.4', NULL, NULL, NULL
+    UNION ALL SELECT N'xls', N'savetodb_framework_extension', N'version', N'Information', NULL, NULL, N'ATTRIBUTE', N'10.8', NULL, NULL, NULL
     UNION ALL SELECT N'xls', N'users', NULL, N'Actions', N'xls', N'xl_actions_set_extended_role_permissions', N'PROCEDURE', NULL, N'_MsgBox', 22, 1
     UNION ALL SELECT N'xls', N'users', NULL, N'Actions', N'xls', N'xl_actions_revoke_extended_role_permissions', N'PROCEDURE', NULL, N'_MsgBox', 23, 1
     UNION ALL SELECT N'xls', N'view_columns', NULL, N'Actions', N'xls', N'Developer Guide', N'HTTP', N'https://www.savetodb.com/dev-guide/xls-columns.htm', NULL, 13, NULL
